@@ -58,7 +58,7 @@ public class Order {
                 ", discountPrice=" + discountPrice +
                 '}';
 
-//        System.out.println("order = " + order); // 이렇게 order 객체 자체를 출력하면 여기 있는 toString이 출력된다.
+//        System.out.println("order = " + order); // 이렇게 order 객체 자체를 출력하면 order클래스에 있는 toString 메서드 리턴값이 출력된다.
     }
 
 
