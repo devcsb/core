@@ -35,10 +35,10 @@ public class ConfigurationSingletonTest {
 
     @Test
     void configuraionDeep() {
-        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class);
+        ApplicationContext ac = new AnnotationConfigApplicationContext(AppConfig.class); //AppConfig도 스프링 빈으로 등록이 됨.
         AppConfig bean = ac.getBean(AppConfig.class);
 
-        System.out.println("bean.getClass() = " + bean.getClass());
+        System.out.println("bean = " + bean.getClass());
 
     }
 }
