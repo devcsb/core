@@ -48,6 +48,7 @@ public class AppConfig { //AppConfig는 애플리케이션의 실제 동작에 �
     public OrderService orderService() {
         System.out.println("call AppConfig.orderService");
         return new OrderServiceImpl(memberRepository(), discountPolicy());
+//        return null;
     }
 
     @Bean
