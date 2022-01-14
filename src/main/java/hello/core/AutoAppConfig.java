@@ -1,5 +1,8 @@
 package hello.core;
 
+import hello.core.member.MemberRepository;
+import hello.core.member.MemoryMemberRepository;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.FilterType;
@@ -10,8 +13,13 @@ import org.springframework.context.annotation.FilterType;
         basePackages = "hello.core.member", // 탐색할 패키지의 시작 위치를 지정한다.
         basePackageClasses = AutoAppConfig.class, //AutoAppConfig가 위치한 패키지를 basePackage 삼는다.
 
-        excludeFilters= @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class) // 보통 실무에서는 따로 제외하지 않지만, 기존 예제코드 최대한 남기기 위해 사용함.
+        excludeFilters = @ComponentScan.Filter(type = FilterType.ANNOTATION, classes = Configuration.class) // 보통 실무에서는 따로 제외하지 않지만, 기존 예제코드 최대한 남기기 위해 사용함.
 )
 public class AutoAppConfig {
+
+    @Bean(name = "memoryMemberRepository")
+    MemberRepository memberRepository() {
+        return new MemoryMemberRepository();
+    }
 
 }
