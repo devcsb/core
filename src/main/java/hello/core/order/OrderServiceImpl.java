@@ -10,20 +10,23 @@ import org.springframework.stereotype.Component;
 public class OrderServiceImpl implements OrderService {
 
 
+    //생성자 주입 방식만 final 키워드를 사용할 수 있다.
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-//    //필드주입 예시
+    //    //필드주입 예시
 //    // 필드 주입은 외부에서 변경이 불가능, DI컨테이너 없이는 아무것도 할 수 없다. 사용하지말자!
 //    @Autowired private  MemberRepository memberRepository;
 //    @Autowired private  DiscountPolicy discountPolicy;
 //
+
 //    //setter 주입 예시
-//    @Autowired(required = false) //주입할 대상이 없어도 동작하게 하려면, (required = false)옵션을 주면 된다.
+//    @Autowired //주입할 대상이 없어도 동작하게 하려면, (required = false)옵션을 주면 된다.
 //    public void setMemberRepository(MemberRepository memberRepository) {
 //        System.out.println("memberRepository = " + memberRepository);
 //        this.memberRepository = memberRepository;
 //    }
+//
 //    @Autowired
 //    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
 //        System.out.println("discountPolicy = " + discountPolicy);
